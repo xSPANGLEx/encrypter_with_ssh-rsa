@@ -68,7 +68,7 @@ echo "decrypt:" >> Makefile
 filepath=`ls *.enc`
 echo "	mkdir desc" >> Makefile
 echo "	openssl aes-256-cbc -d -in ${filepath} -out desc/%s -pass file:./libs/dec_key" >> Makefile
-echo "	rm -rf /libs/prvpath" >> Makefile
+echo "	rm -rf ./libs/prvpath" >> Makefile
 echo '	echo "Successful!! Show inside directory of [desc]"' >> Makefile
 """ % tar_name
 f = open(name+"/configure","w")
